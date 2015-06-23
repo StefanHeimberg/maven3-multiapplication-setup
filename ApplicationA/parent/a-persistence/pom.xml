@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>application.a</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    
+    <artifactId>a-persistence</artifactId>
+    <packaging>jar</packaging>
+
+    <name>Application A - Persistence</name>
+    
+    <dependencies>
+        <dependency>
+            <groupId>application.a</groupId>
+            <artifactId>a-common</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>framework</groupId>
+            <artifactId>framework-persistence</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>framework</groupId>
+            <artifactId>framework-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    
+</project>

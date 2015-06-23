@@ -19,6 +19,7 @@
         <module>framework-ws</module>
         <module>framework-logging</module>
         <module>framework-persistence</module>
+        <module>framework-test</module>
     </modules>
 
     <properties>

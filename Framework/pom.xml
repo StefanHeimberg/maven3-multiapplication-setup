@@ -28,19 +28,25 @@
             
             <dependency>
                 <groupId>framework</groupId>
-                <artifactId>framework-jaxws</artifactId>
+                <artifactId>framework-rest</artifactId>
                 <version>${framework.version}</version>
             </dependency>
             
             <dependency>
                 <groupId>framework</groupId>
-                <artifactId>framework-jaxrs</artifactId>
+                <artifactId>framework-ws</artifactId>
                 <version>${framework.version}</version>
             </dependency>
             
             <dependency>
                 <groupId>framework</groupId>
                 <artifactId>framework-persistence</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>framework</groupId>
+                <artifactId>framework-test</artifactId>
                 <version>${framework.version}</version>
             </dependency>
         </dependencies>

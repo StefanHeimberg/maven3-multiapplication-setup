@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    
+    <groupId>application.a</groupId>
+    <artifactId>bom</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    
+    <name>Application A - BOM</name>
+
+    <modules>
+        <module>parent</module>
+    </modules>
+    
+    <properties>
+        <application.a.version>1.0-SNAPSHOT</application.a.version>
+    </properties>
+    
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>application.a</groupId>
+                <artifactId>a-common</artifactId>
+                <version>${application.a.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>application.a</groupId>
+                <artifactId>a-persistence</artifactId>
+                <version>${application.a.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>application.a</groupId>
+                <artifactId>a-business</artifactId>
+                <version>${application.a.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>application.a</groupId>
+                <artifactId>a-web</artifactId>
+                <version>${application.a.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    
+</project>
