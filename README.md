@@ -51,6 +51,8 @@ Das Framework wird verwendet für:
 
 Die Applikation B liefert nur REST Schnittstellen welche von anderen konsumiert werden können. Für die Business Logik ist es ebenfalls notwendig daten aus der Applikation A über die SOAP Webservice Schnittstelle abzurufen.
 
+Applikation B verwendet zusätzlich noch google guava welches nicht vom Framework geliefert wird.
+
 Das Framwork wird verwendet für:
 * Logging (Splunk )
 * Unit Testing
