@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    
+    <groupId>framework</groupId>
+    <artifactId>bom</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    
+    <name>Framework - BOM</name>
+
+    <modules>
+        <module>parent</module>
+    </modules>
+    
+    <properties>
+        <framework.version>1.0-SNAPSHOT</framework.version>
+    </properties>
+    
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>framework</groupId>
+                <artifactId>framework-logging</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>framework</groupId>
+                <artifactId>framework-jaxws</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>framework</groupId>
+                <artifactId>framework-jaxrs</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>framework</groupId>
+                <artifactId>framework-persistence</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    
+</project>
