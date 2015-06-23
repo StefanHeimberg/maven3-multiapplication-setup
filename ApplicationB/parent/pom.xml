@@ -34,6 +34,7 @@
         <!-- dependency versions -->
         <framework.version>1.0-SNAPSHOT</framework.version>
         <interfaces.version>1.0-SNAPSHOT</interfaces.version>
+        <guava.version>18.0</guava.version>
         
         <!-- plugin versions -->
         <maven-failsafe-plugin.version>2.17</maven-failsafe-plugin.version>
@@ -53,6 +54,12 @@
                 <groupId>application</groupId>
                 <artifactId>interfaces</artifactId>
                 <version>${interfaces.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
