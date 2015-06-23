@@ -19,6 +19,16 @@
             <groupId>application.a</groupId>
             <artifactId>a-business</artifactId>
         </dependency>
+            
+        <dependency>
+            <groupId>application</groupId>
+            <artifactId>interfaces</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>framework</groupId>
+            <artifactId>framework-rest</artifactId>
+        </dependency>
         
         <dependency>
             <groupId>framework</groupId>
