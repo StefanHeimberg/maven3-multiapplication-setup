@@ -1,7 +1,8 @@
 # example-multiapplication-setup
 Beispielkonfiguration Maven Multi-Application &amp; Multi-Module Setup
 
-Dieses Beispiel soll veranschaulichen, wie in einem grösseren Umfeld mit mehreren Applikationen ein Maven Setup aussehen könnte.
+Dieses Beispiel soll veranschaulichen, wie in einem grösseren Umfeld mit mehreren Applikationen ein Maven Setup aussehen könnte. Ich habe diese Repository erstellt um eine Diskussion bei meinem aktuellen Arbeitgeber zu initiieren.
+
 
 Folgendes ist zu diesem Beispiel zu sagen:
 * es gibt keinen code. nur maven pom.xml
@@ -10,6 +11,8 @@ Folgendes ist zu diesem Beispiel zu sagen:
     * interfaces.git
     * applikation1.git
     * applikation2.git
+* Zyklische Abhängigkeiten zwischen den Applikation
+
 
 ## Appliaktionslandschaft
 
@@ -26,12 +29,12 @@ z.B.:
 
 In einem grösseren Umfeld gehe ich davon aus, dass es gemeinsamkeite zwischen den Applikationen gibt. Häuffig sind so genannte "Frameworks" anzutreffen.
 
-Diese Framework bietet die Basis Platform für alle zu erstellenden Business Applikationen. 
+Diese Framework bietet die Basisplatform für alle zu erstellenden Business Applikationen. 
 
 
 ### Applikation A
 
-Die Applikation A ist eine Klassische Webapplikation welche in bekannte Schichten unterteilt ist.
+Die Applikation A ist eine klassische Webapplikation welche in bekannte Schichten unterteilt ist.
 Ein Teil der Business-Operationen wird von der Webapplikation verwendet, und ein Anderer Teil ist über eine Webservice Schnittstelle zugänglich.
 
 Die Webapplikation selbst, verwendet auf der Client Seite für einige Request eine REST Schnittstelle der Applikation B
@@ -56,3 +59,15 @@ Das Framwork wird verwendet für:
 * Publizieren der REST Webservice Schnittstellen. Logging Handler etc...
 
 
+### Interfaces
+
+Diese Projekt beinhalte alle wsdls, xml, xsd, etc... könnte auch aus mehreren maven module bestehen.
+
+Das Interfaces Projekt ist da, um die zyklischen Dependencies zwischen den Applikationen aufzuheben.
+
+
+## Reihenfolge im Build System
+
+* Framework (mvn clean install -f Framework/pom.xml)
+* Interfaces (mvn clean install -f Interfaces/pomx.ml)
+* Applikation A oder Applikation B (mvn clean install -f Applikation?/pom.xml)
