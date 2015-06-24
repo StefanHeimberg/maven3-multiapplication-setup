@@ -5,8 +5,8 @@ Dieses Beispiel soll veranschaulichen, wie in einem grösseren Umfeld mit mehrer
 
 
 Folgendes ist zu diesem Beispiel zu sagen:
-* es gibt keinen code. nur maven pom.xml
-* alles innerhalb diese git repositories. in der realen welt wären dies mit sicherheit separate git repositories mindestens wie folgt
+* Es gibt keinen Sourcecode. Nur das Maven Projekt Model (pom.xml)
+* Alles innerhalb diese git repositories. In der realen Welt würde man für diese Konstellation mit sicherheit separate git repositories verwenden. Wie z.B.:
     * framework.git
     * interfaces.git
     * applikation1.git
@@ -14,9 +14,9 @@ Folgendes ist zu diesem Beispiel zu sagen:
 * Zyklische Abhängigkeiten zwischen den Applikation
 
 
-## Appliaktionslandschaft
+## Applikationslandschaft
 
-Die Applikationslandschaft ist fiktiv, und soll nur eine Ausgangslage sein, um zu verstehen wieso einige dependencies existieren.
+Die Applikationslandschaft ist fiktiv und soll nur eine Ausgangslage sein, um zu verstehen wieso einige dependencies  untereinander existieren.
 
 Mir geht es nur darum, dass die einzelnen Applikation "etwas" zu tun haben, und es unter ihnen "zyklische" dependencies geben könnte.
 
@@ -35,12 +35,12 @@ Diese Framework bietet die Basisplatform für alle zu erstellenden Business Appl
 ### Applikation A
 
 Die Applikation A ist eine klassische Webapplikation welche in bekannte Schichten unterteilt ist.
-Ein Teil der Business-Operationen wird von der Webapplikation verwendet, und ein Anderer Teil ist über eine Webservice Schnittstelle zugänglich.
+Ein Teil der Business-Operationen wird von der Webapplikation verwendet, und ein anderer Teil ist über eine Webservice Schnittstelle zugänglich.
 
 Die Webapplikation selbst, verwendet auf der Client Seite für einige Request eine REST Schnittstelle der Applikation B
 
 Das Framework wird verwendet für:
-* Logging (Splunk )
+* Logging (Splunk)
 * Unit Testing
 * Persistenz (DAO Helper, EntityManager helpers etc...)
 * Publizieren der SOAP Webservice Schnittstellen aus dem Business. Logging Handler etc...
@@ -65,7 +65,7 @@ Das Framwork wird verwendet für:
 
 Diese Projekt beinhalte alle wsdls, xml, xsd, etc... könnte auch aus mehreren maven module bestehen.
 
-Das Interfaces Projekt ist da, um die zyklischen Dependencies zwischen den Applikationen aufzuheben.
+Das Interfaces Projekt ist da, um die zyklischen Dependencies zwischen den Applikationen aufzuheben. Ist aber auch nur notwendig wenn hier z.B. die generierten Jax-B Klassen des Webservice / REST Schnittstellen sind. Besser wäre es noch die jeweilige generierung in den Applikationen selbst zu machen, somit müsste man nur die wsds/xsd etc... in die Applikationen kopieren (http://docs.spring.io/spring-ws/site/reference/html/why-contract-first.html)
 
 
 ## Reihenfolge im Build System
